@@ -1,15 +1,13 @@
 # AES-Verilog-HDL - Advanced Encryption Standard (AES-128, AES-192, AES-256)
 
-This repository contains a fully functional implementation of the Advanced Encryption Standard (AES) algorithm in Verilog, suitable for FPGA deployment.  
-The implementation supports AES with key sizes of 128, 192, and 256 bits, providing a robust solution for secure data encryption and decryption in hardware.
+This repository contains a fully functional implementation of the Advanced Encryption Standard (AES) algorithm in Verilog, suitable for FPGA deployment. The implementation supports AES with key sizes of 128, 192, and 256 bits, providing a robust solution for secure data encryption and decryption in hardware.
+![AES](https://github.com/alhusseingamal/AES-Verilog-HDL/blob/main/screenshots/AES-logo.jpg)
 
 ## Features
 ### AES Key Sizes: Supports 128-bit, 192-bit, and 256-bit key lengths.  
 ### Fully Parameterizable: Easily configurable for different key sizes and operational modes.  
 ### Optimized for FPGA: Designed and tested for FPGA deployment, ensuring efficient resource utilization and high performance.  
 ### Modular Design: Clean, modular Verilog code that allows for easy understanding and modification.  
-
-![AES](https://github.com/alhusseingamal/AES-Verilog-HDL/blob/main/screenshots/AES-logo.jpg)
 
 The design is simulated using ModelSim simulator and synthesized using Quartus Prime.
 
