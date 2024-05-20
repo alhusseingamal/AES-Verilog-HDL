@@ -1,48 +1,55 @@
 # AES-Verilog-HDL - Advanced Encryption Standard (AES-128, AES-192, AES-256)
 
-Implementation of AES with different key sizes (128, 192, 256) using Verilog HDL.
+This repository contains a fully functional implementation of the Advanced Encryption Standard (AES) algorithm in Verilog, suitable for FPGA deployment.  
+The implementation supports AES with key sizes of 128, 192, and 256 bits, providing a robust solution for secure data encryption and decryption in hardware.
+
+## Features
+### AES Key Sizes: Supports 128-bit, 192-bit, and 256-bit key lengths.  
+### Fully Parameterizable: Easily configurable for different key sizes and operational modes.  
+### Optimized for FPGA: Designed and tested for FPGA deployment, ensuring efficient resource utilization and high performance.  
+### Modular Design: Clean, modular Verilog code that allows for easy understanding and modification.  
 
 ![AES](https://github.com/alhusseingamal/AES-Verilog-HDL/blob/main/screenshots/AES-logo.jpg)
 
+The design is simulated using ModelSim simulator and synthesized using Quartus Prime.
+
 ## Code Structure
 
-The files are structured in a hierarchy:
-In total there are 13 files in addition to the testbenches.
+The code is structured in a hierarchy:
+There are 13 code files in addition to the testbenches.
 #### First Level
 1 - AES.v              : This is the integrated file containing the Cipher and Inverse Cipher algorithms in addition to the KeyExpansion algorithm.
 #### Second Level
-2 - Cipher.v           : Implements the AES encryption process, including all required rounds.
-3 - InvCipher.v        : Implements the AES decryption process, including all required rounds.
-4 - KeyExpansion.v     : Handles the generation of round keys from the initial key.
+2 - Cipher.v           : Implements the AES encryption process, including all required rounds.  
+3 - InvCipher.v        : Implements the AES decryption process, including all required rounds.  
+4 - KeyExpansion.v     : Handles the generation of round keys from the initial key.  
 #### Third Level
-5 - AddRoundKey.v      : Applies the round key to the state matrix.
-6 - MixColumns.v       : Performs the column mixing transformation in the encryption process.
-7 - ShiftRows.v        : Executes the row shifting transformation in the encryption process.
-8 - SubBytes.v         : Conducts the byte substitution step using the SBox.
-9 - SBox.v             : Contains the substitution box used in the SubBytes step.
-10 - InvMixColumns.v   : Performs the inverse column mixing in the decryption process.
-11 - InvShiftRows.v    : Executes the inverse row shifting in the decryption process.
-12 - InvSubBytes.v     : Conducts the inverse byte substitution step using the InvSBox.
-13 - InvSBox.v         : Contains the inverse substitution box used in the InvSubBytes step.
+5 - AddRoundKey.v      : Applies the round key to the state matrix.  
+6 - MixColumns.v       : Performs the column mixing transformation in the encryption process.  
+7 - ShiftRows.v        : Executes the row shifting transformation in the encryption process.  
+8 - SubBytes.v         : Conducts the byte substitution step using the SBox.  
+9 - SBox.v             : Contains the substitution box used in the SubBytes step.  
+10 - InvMixColumns.v   : Performs the inverse column mixing in the decryption process.  
+11 - InvShiftRows.v    : Executes the inverse row shifting in the decryption process.  
+12 - InvSubBytes.v     : Conducts the inverse byte substitution step using the InvSBox.  
+13 - InvSBox.v         : Contains the inverse substitution box used in the InvSubBytes step.  
 
 ### Testbenches
 
 #### Three self-checking testbenches can be found, one for each Key Size:
-1 - AES_128_tb.v
-2 - AES_192_tb.v
-3 - AES_256_tb.v
+1 - AES_128_tb.v  
+2 - AES_192_tb.v  
+3 - AES_256_tb.v  
 
-In additon to the source code, separate testbenches are provided for each module in the "testbenches" directory.
+In additon to the source code, separate testbenches are provided for each module in the "testbenches" directory.  
 
 ### FPGA-configurable code
 
-Three addition files can be found under the directory ./src/fpga:
+Three addition files can be found under the directory ./src/fpga:  
 
-1 - AES_FPGA.v              : This is the file I used to configure my design and the outputs to be observed on the FPGA.
-2 - AES_sim.v               : This is a file from which you could start if you would like to customize your own setting/outputs on the FPGA.
-3 - sevenSegmentDecoder.v   : In both cases, you may need a 7-segmend decoder to display your outputs on the 7-segment display.
-
-The design is simulated using ModelSim simulator.
+1 - AES_FPGA.v              : This is the file I used to configure my design and the outputs to be observed on the FPGA.  
+2 - AES_sim.v               : This is a file from which you could start if you would like to customize your own setting/outputs on the FPGA.  
+3 - sevenSegmentDecoder.v   : In both cases, you may need a 7-segmend decoder to display your outputs on the 7-segment display.  
 
 ## Simulation Results
 
@@ -81,13 +88,11 @@ So after (Nr+1) Decyryption rounds the last 4 digits of the decrypted message is
   do doFiles/aes128.do
   ```
   for the AES_128
-  
   Or
   ```sh
   do doFiles/aes192.do
   ```
   for the AES_192
-  
   Or
    ```sh
   do doFiles/aes256.do
